@@ -259,7 +259,7 @@ static int parse_args(all_args_t* args, int argc, char* argv[])
 
     /* PHY section */
     ("phy.worker_cpu_mask",
-     bpo::value<int>(&args->phy.worker_cpu_mask)->default_value(-1),
+     bpo::value<int>(&args->phy.worker_cpu_mask)->default_value(255),
      "cpu bit mask (eg 255 = 1111 1111)")
 
     ("phy.sync_cpu_affinity",
