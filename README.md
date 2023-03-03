@@ -1,17 +1,52 @@
+
+Man in the Detection research paper uses a 4G network. This repo is fork from [srsRAN project](https://www.srsran.com).
+Without any modifications to the source code, except to configure the frequency of operation, we use the project as is.
+
+eNb configuration file with modications is in the [repo](https://github.com/shotsan/4G_eNodeB_EPC/blob/3956297891cd4739f450ac30dc2ac81006304ccf/enb.conf)
+
+
+
+## Instructions to run eNb and EPC
+
+1. Clone the repo
+
+```
+git clone https://github.com/shotsan/4G_eNodeB_EPC/
+```
+
+2. Install UHD to use USRP, we used USRP X310 which interfaces to the host machine through ethernet interface.
+
+https://files.ettus.com/manual/page_install.html
+
+3. Build project
+
+```
+mkdir build
+cd build
+cmake 
+make -j$(nproc)
+```
+
+
+4. Start eNB and UE 
+
+```
+srsenb <path to config file>
+srsepc
+
+```
+
+### SRS RAN PROJECT DETAILS
+
 srsRAN
 ======
 
-[![Build Status](https://github.com/srsran/srsRAN/actions/workflows/ccpp.yml/badge.svg?branch=master)](https://github.com/srsran/srsRAN/actions)
-[![Build Status](https://app.travis-ci.com/srsran/srsRAN.svg?branch=master)](https://app.travis-ci.com/github/srsran/srsRAN)
-[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/srsran/srsRAN.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/srsran/srsRAN/context:cpp)
-[![Coverity](https://scan.coverity.com/projects/23045/badge.svg)](https://scan.coverity.com/projects/srsran)
-
-srsRAN is a 4G/5G software radio suite developed by [SRS](http://www.srs.io).
+srsRAN is a 4G software radio suite developed by [SRS](http://www.srs.io).
 
 See the [srsRAN project pages](https://www.srsran.com) for information, guides and project news.
 
 The srsRAN suite includes:
-  * srsUE - a full-stack SDR 4G/5G UE application
+
   * srsENB - a full-stack SDR 4G/5G e(g)NodeB application
   * srsEPC - a light-weight 4G core network implementation with MME, HSS and S/P-GW
 
